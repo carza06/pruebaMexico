@@ -1,0 +1,55 @@
+<div id="header" ng-app>
+    <div class="row">
+        <div class="col-lg-6">
+            
+        </div>
+        <div class="col-lg-3 ">
+            <h2>PinPrueba</h2>
+        </div>
+        <div class="col-lg-3 text-center">
+            <div class="dropdown" style="line-height: 6;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="p-2"> {{user}} </span>
+                </button>
+              </div>
+        </div>
+    </div>
+
+</div>
+<div id="main">
+
+<nav class="text-center" ng-click="$event.preventDefault()">
+    <a href="/home" class="home" ng-click="active='home'">Equipos</a>
+    <a href="/prueba" class="projects" ng-click="active='projects'">Prueba</a>
+    <a href="#" class="services" ng-click="active='services'">Estadisticas</a>
+    <a href="#" class="contact" ng-click="active='contact'">Contacto</a>
+</nav>
+
+</div>
+
+<div class="card" style="width: 38rem;">
+    <div class="card-head text-center">
+        <h3><strong>Nuevo Equipo</strong></h3>
+    </div>
+    <div class="card-body p-3">
+        <form [formGroup]="form" (ngSubmit)="submit()" class="custom-form" method="post">
+                  <div class="col-lg-12">
+                      <label for="name">Nombre del Equipo</label>
+                      <input type="text" id="name" formControlName="name" name="name" placeholder="Nombre del equipo" class="form-control p-2" required="required"/>
+                  </div>
+                  <div class="col-lg-12">
+                      <label for="email">Direccion Ip</label>
+                      <input type="tex" name="ip" formControlName="ip" placeholder="Direccion ip del equipo" class="form-control p-2" required="required" />
+                  </div>
+                  <div class="col-lg-12">
+                    <label for="status">Status</label>
+                    <select name="status" formControlName="status" class="form-control p-2" id="status">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                  </div>
+
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </form>
+    </div>
+  </div>
